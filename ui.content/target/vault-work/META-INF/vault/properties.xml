@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Example - UI content</comment>
+<entry key="createdBy">pgleghorn</entry>
+<entry key="name">example.ui.content</entry>
+<entry key="created">2016-04-21T02:31:19.805+0100</entry>
+<entry key="groupId">org.myorg</entry>
+<entry key="version">0.0.1-SNAPSHOT</entry>
+<entry key="requiresRoot">false</entry>
+<entry key="group">Example Content Package</entry>
+<entry key="description">UI content package for Example</entry>
+<entry key="artifactId">example.ui.content</entry>
+<entry key="path">/etc/packages/Example Content Package/example.ui.content.zip</entry>
+</properties>

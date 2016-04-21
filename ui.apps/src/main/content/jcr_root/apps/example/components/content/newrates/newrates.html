@@ -1,0 +1,40 @@
+<!--/*
+    Copyright 2015 Adobe Systems Incorporated
+  
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+  
+        http://www.apache.org/licenses/LICENSE-2.0
+  
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/-->
+
+<table data-sly-use.info="org.myorg.example.core.models.RatesModel">
+	<thead>
+		<tr>
+			<th>${'Product name' @ i18n, locale='de'}</th>
+			<th>${'Initial interest rate' @ i18n, locale='de'}</th>
+			<th>${'Follow on interest rate' @ i18n, locale='de'}</th>
+			<th data-sly-test="${properties.overallCost}">${'Overall cost for comparison' @ i18n, locale='de'}</th>
+			<th data-sly-test="${properties.LTV}">${'Loan to value' @ i18n, locale='de'}</th>
+			<th>${'Mortgage fee' @ i18n, locale='de'}</th>
+			<th data-sly-test="${properties.earlyRepaymentCharge}">${'Early repayment charge' @ i18n, locale='de'}</th>
+		</tr>
+	</thead>
+	<tbody data-sly-list="${info.rates}">
+		<tr>
+			<td>${item.productName}</td>
+			<td>${item.initialInterestRate}%</td>
+			<td>${item.followOnInterestRate}%</td>
+			<td data-sly-test="${properties.overallCost}">${item.overallCost}% APRC</td>
+			<td data-sly-test="${properties.LTV}">${item.LTV.ratio}% ${'(max) of the value of your home' @ i18n, locale='de'}<a href="#" title="Min loan &pound;${item.LTV.minLoan}, max loan £${item.LTV.maxLoan}">*</a></td>
+			<td>&pound;${item.mortgageFee}</td>
+			<td data-sly-test="${properties.earlyRepaymentCharge}">${item.earlyRepaymentCharge.rate} ${'of the balance repaid until' @ i18n, locale='de'} ${item.earlyRepaymentCharge.untilDate}</td>
+		</tr>
+	</tbody>
+</table>
